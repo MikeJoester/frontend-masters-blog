@@ -1,0 +1,50 @@
+.app-home-main {
+    background-image: url(../../assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 753px;
+    width: 100%;
+    align-items: flex-start;
+    background-color: linear-gradient(89.92deg, rgba(0, 0, 0, 0.58) 0.07%, rgba(0, 0, 0, 0.1) 99.92%);
+}
+
+.app-home-main-container {
+    position: absolute;
+    top: 30%;
+}
+
+.app-home-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #DECDB4;
+}
+
+h1 {
+    font-size: 64px;
+    margin: -5px 95px;
+    font-weight: 700;
+}
+
+.text-container-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 650px;
+    margin-left: 95px;
+    margin-top: 20px;
+}
+
+.text-container-description p {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.vertical-line {
+    border-left: 4px solid #DECDB4;
+    height: 56px;
+    margin-right: 10px;
+}
