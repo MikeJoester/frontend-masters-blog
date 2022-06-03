@@ -1,0 +1,108 @@
+.app-register-main {
+    background-image: url(../../assets/background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    align-items: flex-start;
+}
+
+.app-register-container {
+    position: absolute;
+    top: 20%;
+}
+
+.reg-title {
+    color: #DECDB4;
+    font-size: 64px;
+    margin-left: 95px;
+    font-weight: 700;
+}
+
+.reg-form-group {
+    width: 604px;
+    text-align: center;
+}
+
+.reg-name-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.reg-form-group p {
+    font-weight: 500;
+    color: #E0E0E0;
+    font-size: 18px;
+}
+
+.reg-form-group a {
+    font-weight: 500;
+    color: #4C4DDC;
+    text-decoration: none;
+}
+
+.cb-container {
+    text-align: left;
+    color: #E0E0E0;
+    display: block;
+    position: relative;
+    font-size: 18px;
+    padding-left: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.cb-container a {
+    font-weight: 600;
+}
+
+.cb-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border-radius: 8px;
+    background-color: #C4C4C4;
+}
+
+.cb-container:hover input ~ .checkmark {
+    background-color: #9e9e9e;
+}
+
+.cb-container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cb-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.cb-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

@@ -8,22 +8,38 @@
     width: 100%;
     height: 86px;
     color: white;
-    font-family: 'Plus Jakarta Sans', sans-serif;
 }
-
 .navbar-container {
     display: flex;
-    padding-top: 21px;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.navbar-container h1 {
+.navbar-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-header-icon {
+    display: flex;
+    height: 86px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-header-icon h1 {
     font-size: 36px;
+    margin-left: 95px;
     font-weight: 700;
 }
 
-.navbar-container h2 {
+.navbar-header-icon h2 {
     font-size: 18px;
     font-weight: 700;
-    margin-left:-95px;
+    margin-top: 30px;
+}
+
+.search-container {
+    display: flex;
+    height: 100%;
 }
