@@ -3,6 +3,7 @@ import Navbar from './components/NavBar/Navbar';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Home/>
       {/* <Login/> */}
       {/* <Register/> */}
+      <Footer/>
     </div>
   );
 }

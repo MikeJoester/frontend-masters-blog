@@ -1,0 +1,37 @@
+
+footer {
+    height: 435px;
+    background-image: url(../../assets/FooterBG.png);
+    margin: 0;
+}
+
+footer p {
+    color: #DECDB4;
+    margin: 0;
+}
+
+.footer-logo-link {
+    color: white;
+    text-decoration: none;
+    margin-left: -95px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer-link {
+    margin-left: 160px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.footer-link h3 {
+    font-weight: 700;
+    color: #DECDB4;
+}
