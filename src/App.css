@@ -4,3 +4,19 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  margin-right: 4px;
+}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover {
+  border-radius: 15px;
+  background: #DECDB4;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+

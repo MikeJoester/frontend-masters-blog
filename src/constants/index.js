@@ -4,4 +4,4 @@ import data from './data';
 export {
     images,
     data,
-}
+};

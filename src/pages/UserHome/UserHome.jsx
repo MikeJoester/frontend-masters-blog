@@ -1,5 +1,5 @@
 import React from 'react';
-import {Category, Footer} from '../../components';
+import {Category, ArticleList, Footer} from '../../components';
 import './UserHome.css';
 
 const UserHome = () => {
@@ -20,7 +20,10 @@ const UserHome = () => {
           </div>
         </div>
       </div>
-      <Category/>
+      <div className="category-bg">
+        <Category/>
+        <ArticleList/>
+      </div>
       <Footer/>
     </div>
     

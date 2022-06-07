@@ -1,9 +1,15 @@
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import csslogo from '../assets/CSS.png';
+import jslogo from '../assets/JS.png';
+import reactlogo from '../assets/React.png';
+import twlogo from '../assets/Tailwind.png';
+import vuelogo from '../assets/Vue.png';
+import angularlogo from '../assets/Angular.png';
 
-export {
-    TwitterIcon,
-    InstagramIcon,
-    LinkedInIcon,
+export default {
+    csslogo,
+    jslogo,
+    reactlogo,
+    twlogo,
+    vuelogo,
+    angularlogo,
 };
