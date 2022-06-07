@@ -1,18 +1,14 @@
 import './App.css';
-import Navbar from './components/NavBar/Navbar';
-import Home from './pages/Home/Home';
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
-import Footer from './components/Footer/Footer';
+import {Navbar} from './components';
+import {Home, Login, Register, UserHome} from './pages';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Home/>
+      <UserHome/>
       {/* <Login/> */}
       {/* <Register/> */}
-      <Footer/>
     </div>
   );
 }
