@@ -2,6 +2,9 @@ import React from 'react';
 import { Stack } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider} from '@mui/material/styles';
+import ArticleItem from './ArticleItems/ArticleItem';
+import ArticleTitle from './ArticleTitle/ArticleTitle';
+import images from '../../../constants/images';
 
 import './ArticleList.css';
 
@@ -20,26 +23,46 @@ const ArticleList = () => {
   return (
     <ThemeProvider theme={AlistTheme}>
         <Stack direction="column" spacing={10} sx={{mx:'94px', mt:'80px'}}>
-            <Stack direction="row" sx={{justifyContent: 'space-between'}}>
-                <a href="#" className="al-link"><Stack direction="row">
-                <p className="category-header">Browse the Category</p>
-                <div className="small-line"></div>
-                </Stack></a>
-                <a href="#" className="al-link"><Stack direction="row">
-                <p className="category-header">See all categories</p>
-                <ArrowForwardIosIcon color="primary" sx={{ mt:'5px',ml:'12px'}}/>
-                </Stack></a>
-            </Stack>
+            <Stack direction="column" spacing={4}>
+              <ArticleTitle title="Featured Article"/>
+              <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
+                <ArticleItem
+                  imagename={images.article1}
+                  title="Fundamental Of Javascript"
+                  avatar={images.avatar1}
+                  userName="Dasteen"
+                  postDate="Jan 10, 2022"
+                  readTime="3 Min"
+                />
 
-            <Stack direction="row" sx={{justifyContent: 'space-between'}}>
-                <a href="#" className="al-link"><Stack direction="row">
-                <p className="category-header">Browse the Category</p>
-                <div className="small-line"></div>
-                </Stack></a>
-                <a href="#" className="al-link"><Stack direction="row">
-                <p className="category-header">See all categories</p>
-                <ArrowForwardIosIcon color="primary" sx={{ mt:'5px',ml:'12px'}}/>
-                </Stack></a>
+                <ArticleItem
+                  imagename={images.article1}
+                  title="Fundamental Of Javascript"
+                  avatar={images.avatar1}
+                  userName="Dasteen"
+                  postDate="Jan 10, 2022"
+                  readTime="3 Min"
+                />
+
+                <ArticleItem
+                  imagename={images.article1}
+                  title="Fundamental Of Javascript"
+                  avatar={images.avatar1}
+                  userName="Dasteen"
+                  postDate="Jan 10, 2022"
+                  readTime="3 Min"
+                />
+
+                <ArticleItem
+                  imagename={images.article1}
+                  title="Fundamental Of Javascript"
+                  avatar={images.avatar1}
+                  userName="Dasteen"
+                  postDate="Jan 10, 2022"
+                  readTime="3 Min"
+                />
+                
+              </Stack>
             </Stack>
         </Stack>
     </ThemeProvider>

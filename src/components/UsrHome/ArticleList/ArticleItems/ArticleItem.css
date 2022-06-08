@@ -1,0 +1,32 @@
+.article-item-text {
+    color: #DECDB4;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.title-image {
+    margin: 20px 20px;
+    margin-bottom: 25px;
+    width: 100%;
+    height: auto;
+}
+
+.avatar-image {
+    width: 57px;
+    height: 57px;
+}
+
+.usr-name {
+    margin: 0;
+    color: #DECDB4;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.time-text {
+    margin: 0;
+    color: #DECDB4;
+    font-size: 14px;
+    font-weight: 400;
+}
