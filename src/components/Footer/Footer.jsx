@@ -84,6 +84,8 @@ const Footer = () => {
                 </Box>
             </div>
         </div>
+        <div className="white-horizontal-line"></div>
+        <p className="footer-copyright">© 2022 MikeJ</p>
     </footer> 
   )
 };

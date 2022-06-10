@@ -6,6 +6,7 @@ import vuelogo from '../assets/Vue.png';
 import angularlogo from '../assets/Angular.png';
 import article1 from '../assets/article1.png';
 import avatar1 from '../assets/avatar1.png';
+import mailbox from '../assets/MailBox.png';
 
 export default {
     csslogo,
@@ -16,4 +17,5 @@ export default {
     angularlogo,
     article1,
     avatar1,
+    mailbox,
 };
