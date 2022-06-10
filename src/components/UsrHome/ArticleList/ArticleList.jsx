@@ -27,7 +27,9 @@ const AlistTheme = createTheme({
 const ArticleList = () => {
   return (
     <ThemeProvider theme={AlistTheme}>
-        <Stack direction="column" spacing={10} sx={{mx:'94px', justifyContent: 'space-between'}}>
+        <Stack direction="column" spacing={10} id="article-list" 
+              sx={{mx:'94px', justifyContent: 'space-between'}}
+        >
             <Stack direction="column" spacing={4}>
               <ArticleTitle title="Featured Article"/>
               <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>

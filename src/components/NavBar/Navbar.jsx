@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Stack from '@mui/material/Stack';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import './Navbar.css';
@@ -45,14 +46,30 @@ const Navbar = () => {
             p: 2,
           }}>
             <ThemeProvider theme={theme}>
-              <NavbarButton variant='text'>Home</NavbarButton>
-              <NavbarButton variant='text'>Category</NavbarButton>
+              <NavbarButton variant='text'>
+                <Link to="/">
+                  Home 
+                </Link>
+              </NavbarButton>
+              <NavbarButton variant='text'>
+                <Link to="/UserHome">
+                  Category 
+                </Link>
+              </NavbarButton>
               <div className="search-container">
                 <IconButton aria-label="search" color="primary" style={{}}><SearchIcon/></IconButton>
                 <NavbarButton variant='text'>Search</NavbarButton>
               </div>
-              <NavbarButton variant='text'>Sign In</NavbarButton>
-              <NavbarButton variant='outlined'>Sign Up</NavbarButton>
+              <NavbarButton variant='text'>
+                <Link to="/Login">
+                  Sign In 
+                </Link>
+              </NavbarButton>
+              <NavbarButton variant='outlined'>
+                <Link to="/Register">
+                  Sign Up 
+                </Link>
+              </NavbarButton>
             </ThemeProvider>
           </Stack>
         </div>

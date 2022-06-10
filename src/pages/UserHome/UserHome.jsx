@@ -1,6 +1,7 @@
 import React from 'react';
 import {Category, ArticleList, Footer} from '../../components';
 import './UserHome.css';
+import Button from '@mui/material/Button';
 
 const UserHome = () => {
   return (

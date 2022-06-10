@@ -19,7 +19,7 @@ const CtgTheme = createTheme({
 
 const Category = () => {
   return (
-    <div className="category-main">
+    <div className="category-main" id="usr-main-category">
       <ThemeProvider theme={CtgTheme}>
         <Stack direction="column" sx={{ml:'96px', mr:'101px', pt:'30px'}}>
           <div className="category-title-container">
