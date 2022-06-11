@@ -57,8 +57,12 @@ const Navbar = () => {
                 </Link>
               </NavbarButton>
               <div className="search-container">
-                <IconButton aria-label="search" color="primary" style={{}}><SearchIcon/></IconButton>
-                <NavbarButton variant='text'>Search</NavbarButton>
+                <NavbarButton variant='text'>
+                  <SearchIcon/>
+                  <Link to="/SearchPage">
+                    Search
+                  </Link>
+                </NavbarButton>
               </div>
               <NavbarButton variant='text'>
                 <Link to="/Login">

@@ -5,7 +5,8 @@ import {
   Home, 
   Login, 
   Register, 
-  UserHome
+  UserHome,
+  SearchPage,
 } from './pages';
 
 import {
@@ -27,10 +28,10 @@ function App() {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Register" element={<Register/>}/>
         <Route path="/UserHome" element={<UserHome/>}/>
+        <Route path="/SearchPage" element={<SearchPage/>}/>
       </Routes>
     </Router>
     </div>
-    
   );
 }
 
