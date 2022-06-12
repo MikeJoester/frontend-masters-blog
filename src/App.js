@@ -2,11 +2,15 @@ import './App.css';
 import {Navbar} from './components';
 
 import {
-  Home, 
-  Login, 
-  Register, 
+  Home,
+  Login,
+  Register,
   UserHome,
   SearchPage,
+  CategoryPage,
+  CSSPage,
+  JSPage,
+  ReactPage,
 } from './pages';
 
 import {
@@ -29,6 +33,10 @@ function App() {
         <Route path="/Register" element={<Register/>}/>
         <Route path="/UserHome" element={<UserHome/>}/>
         <Route path="/SearchPage" element={<SearchPage/>}/>
+        <Route path="/CategoryPage" element={<CategoryPage/>}/>
+        <Route path="/CSSPage" element={<CSSPage/>}/>
+        <Route path="/JSPage" element={<JSPage/>}/>
+        <Route path="/ReactPage" element={<ReactPage/>}/>
       </Routes>
     </Router>
     </div>

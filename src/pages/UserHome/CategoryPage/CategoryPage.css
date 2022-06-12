@@ -1,0 +1,18 @@
+.category-page-container {
+    background-color: #08080D;
+    height: 1450px;
+    overflow: hidden;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-page-contents {
+    margin-top: 193px;
+    margin-left: 96px;
+}
+
+.category-page-contents a {
+    text-decoration: none;
+}

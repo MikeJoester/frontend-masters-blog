@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 1460px;
-    width: 100vw;
+    overflow: hidden;
     z-index: -1;
 }
 
@@ -19,7 +19,6 @@
     width: 83vw;
     height: 0px;
     left: 95px;
-    right: 95px;
     top: 365px;
     border: 1px solid #C0C0C0;
 }

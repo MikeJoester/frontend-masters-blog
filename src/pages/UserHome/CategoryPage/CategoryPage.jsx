@@ -1,34 +1,18 @@
 import React from 'react';
-import './Category.css';
-import { Stack } from '@mui/material';
+import {Footer} from '../../../components';
 import images from '../../../constants/images';
-import { createTheme, ThemeProvider} from '@mui/material/styles';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Stack } from '@mui/material';
+import './CategoryPage.css';
 
-const CtgTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#DECDB4',
-    },
-    
-    contrastThreshold: 3,
-    tonalOffset: 0.2,
-  },
-});
-
-const Category = () => {
+const CategoryPage = () => {
   return (
-    <div className="category-main" id="usr-main-category">
-      <ThemeProvider theme={CtgTheme}>
-        <Stack direction="column" sx={{ml:'96px', mr:'101px', pt:'30px'}}>
+    <div className="category-page-container">
+        <div className="category-page-contents">
+        <Stack direction="column" spacing={10} sx={{ml:'96px', mr:'101px', pt:'30px'}}>
           <div className="category-title-container">
-          <a href="/CategoryPage"><Stack direction="row">
+          <a href="/UserHome"><Stack direction="row">
               <p className="category-header">Browse the Category</p>
               <div className="small-line"></div>
-            </Stack></a>
-            <a href="/CategoryPage"><Stack direction="row">
-              <p className="category-header">See all categories</p>
-              <ArrowForwardIosIcon color="primary" sx={{ mt:'5px',ml:'12px'}}/>
             </Stack></a>
           </div>
 
@@ -89,10 +73,23 @@ const Category = () => {
             </Stack></a>
           </Stack>
           
+          <Stack direction="column" sx={{ width: '100%', alignItems: 'center'}}> 
+            <a href="#"><Stack direction="column" 
+              sx={{
+                width: '220px', 
+                height: '220px', 
+                alignItems: 'center',
+                justifyContent: 'space-between'}
+              }>
+                <img className="category-logo" src={images.angularlogo}></img>
+                <p className="category-header">AngularJs</p>
+              </Stack></a>
+          </Stack>
         </Stack>
-      </ThemeProvider>
+        </div>
+        <Footer/>
     </div>
   )
-};
+}
 
-export default Category;
+export default CategoryPage;

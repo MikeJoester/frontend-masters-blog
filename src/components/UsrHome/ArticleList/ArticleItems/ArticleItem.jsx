@@ -29,15 +29,17 @@ const ArticleItem = (ItemProps) => {
             
             <Stack direction="row" 
                 sx={{
-                    alignItems:'center', 
+                    justifyContent: 'center',
                     width:'100%', 
                     mb:'25px',
                     px:'22px'}}>
-                <img src={ItemProps.avatar} className="avatar-image"/>
-                <Stack direction="column" sx={{ml:'15px', width: '100%', height:'57px', justifyContent:'space-between'}}>
-                    <p className="usr-name">{ItemProps.userName}</p>
-                    <p className="time-text">{ItemProps.postDate} &nbsp; • &nbsp; {ItemProps.readTime} Read</p>
-                </Stack>
+                <div className="article-item-info-container">
+                    <img src={ItemProps.avatar} className="avatar-image"/>
+                    <Stack direction="column" sx={{ml:'15px', width: '100%', height:'57px', justifyContent:'space-between'}}>
+                        <p className="usr-name">{ItemProps.userName}</p>
+                        <p className="time-text">{ItemProps.postDate} &nbsp; • &nbsp; {ItemProps.readTime} Read</p>
+                    </Stack>
+                </div>
             </Stack>
         </Stack>
     )

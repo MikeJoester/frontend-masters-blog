@@ -30,3 +30,8 @@
     font-size: 14px;
     font-weight: 400;
 }
+
+.article-item-info-container {
+    width: 75%;
+    display: flex;
+}
