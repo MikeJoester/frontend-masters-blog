@@ -7,6 +7,8 @@ import CategoryPage from './UserHome/CategoryPage/CategoryPage';
 import CSSPage from './UserHome/CSSPage/CSSPage';
 import JSPage from './UserHome/JSPage/JSPage';
 import ReactPage from './UserHome/ReactPage/ReactPage';
+import WritingPage from './WritingPage/WritingPage';
+import UserProfile from './UserProfile/UserProfile';
 
 export {
     Home,
@@ -18,4 +20,6 @@ export {
     CSSPage,
     JSPage,
     ReactPage,
+    WritingPage,
+    UserProfile,
 };

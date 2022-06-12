@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+
+.navbar-main {
+    overflow: hidden;
+    background-color: #08080D;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 86px;
+    color: white;
+    z-index: 2;
+    box-shadow: 0px 0px 7px #C0C0C0;
+}
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-container a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-header-icon {
+    display: flex;
+    height: 86px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar-header-icon h1 {
+    font-size: 36px;
+    margin-left: 95px;
+    font-weight: 700;
+}
+
+.navbar-header-icon h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}

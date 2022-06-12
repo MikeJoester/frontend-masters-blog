@@ -11,6 +11,8 @@ import {
   CSSPage,
   JSPage,
   ReactPage,
+  WritingPage,
+  UserProfile,
 } from './pages';
 
 import {
@@ -37,6 +39,8 @@ function App() {
         <Route path="/CSSPage" element={<CSSPage/>}/>
         <Route path="/JSPage" element={<JSPage/>}/>
         <Route path="/ReactPage" element={<ReactPage/>}/>
+        <Route path="/WritingPage" element={<WritingPage/>}/>
+        <Route path="/UserProfile" element={<UserProfile/>}/>
       </Routes>
     </Router>
     </div>

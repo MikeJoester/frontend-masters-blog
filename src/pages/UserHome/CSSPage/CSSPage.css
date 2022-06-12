@@ -1,0 +1,9 @@
+.css-page-container {
+    background-color: #08080D;
+    height: 1850px;
+    overflow: hidden;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

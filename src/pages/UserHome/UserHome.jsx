@@ -1,7 +1,49 @@
 import React from 'react';
 import {Category, ArticleList, Footer} from '../../components';
 import './UserHome.css';
-import Button from '@mui/material/Button';
+import {Stack, Box, TextField, Button} from '@mui/material/';
+import { styled } from '@mui/material/styles';
+
+const SubscribeButton = styled(Button)({
+  boxShadow: 'none',
+  width: 145,
+  height: 67,
+  textTransform: 'none',
+  fontSize: 20,
+  fontWeight: 700,
+  borderRadius: 8,
+  backgroundColor: '#6246EA',
+});
+
+const MailTextField = styled(TextField)({
+  '& label.Mui-focused': {
+      color: 'transparent',
+  },
+  '& label': {
+      color: '#c0c0c0',
+      fontSize: '20px',
+      fontFamily: 'Plus Jakarta Sans',
+      fontWeight: '500',
+  },
+  '& .MuiInput-underline:after': {
+      borderBottomColor: '#c0c0c0',
+  },
+  '& .MuiOutlinedInput-root': {
+      borderRadius: 8,
+      backgroundColor: '#fff',
+      height: '67px',
+
+      '& fieldset': {
+          borderColor: '#404040',
+      },
+      '&:hover fieldset': {
+          borderColor: '#c0c0c0',
+      },
+      '&.Mui-focused fieldset': {
+          borderColor: '#c0c0c0',
+      },
+  },
+});
 
 const UserHome = () => {
   return (
@@ -17,6 +59,11 @@ const UserHome = () => {
                       <div className="vertical-line"/>
                       <p>On this blog I share tips and tricks, frameworks, projects, tutorials, etc Make sure you subscribe to get the latest updates</p>
                   </div>
+
+                  <Stack direction="row" spacing={2} sx={{ml:'95px'}}>
+                    <MailTextField label="Enter your email here..." sx={{width:'444px', height:'67px'}}/>
+                    <SubscribeButton variant="contained" color="secondary">Subscribe</SubscribeButton>
+                  </Stack>
               </div>
           </div>
         </div>

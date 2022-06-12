@@ -1,6 +1,5 @@
 import React from 'react';
 import { Stack } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { createTheme, ThemeProvider} from '@mui/material/styles';
 import ArticleItem from './ArticleItems/ArticleItem';
 import ArticleTitle from './ArticleTitle/ArticleTitle';
@@ -31,7 +30,7 @@ const ArticleList = () => {
               sx={{mx:'94px', justifyContent: 'space-between'}}
         >
             <Stack direction="column" spacing={4}>
-              <ArticleTitle title="Featured Article"/>
+              <ArticleTitle title="CSS" linkTo="/CSSPage"/>
               <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
                 <ArticleItem
                   imagename={images.article1}
@@ -73,7 +72,7 @@ const ArticleList = () => {
             </Stack>
 
             <Stack direction="column" spacing={4}>
-              <ArticleTitle title="Featured Article"/>
+              <ArticleTitle title="JavaScript" linkTo="/JSPage"/>
               <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
                 <ArticleItem
                   imagename={images.article1}
@@ -115,7 +114,7 @@ const ArticleList = () => {
             </Stack>
 
             <Stack direction="column" spacing={4}>
-              <ArticleTitle title="Featured Article"/>
+              <ArticleTitle title="React JS" linkTo="/ReactPage"/>
               <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
                 <ArticleItem
                   imagename={images.article1}

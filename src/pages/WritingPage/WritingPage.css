@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+.writing-page-main {
+    height: 1400px;
+    background-color: #08080D;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-input {
+    border-color: transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    background-color: #08080D;
+    color: #fff;
+    margin-left: 185px;
+    width: 80%;
+    height: 75%;
+}
