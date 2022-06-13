@@ -9,6 +9,7 @@ import JSPage from './UserHome/JSPage/JSPage';
 import ReactPage from './UserHome/ReactPage/ReactPage';
 import WritingPage from './WritingPage/WritingPage';
 import UserProfile from './UserProfile/UserProfile';
+import EditPage from './EditPage/EditPage';
 
 export {
     Home,
@@ -22,4 +23,5 @@ export {
     ReactPage,
     WritingPage,
     UserProfile,
+    EditPage,
 };

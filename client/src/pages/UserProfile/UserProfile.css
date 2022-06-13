@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.user-profile-main {
+    background-color: #08080D;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1435px;
+    color: #DECDB4;
+}
+
+.user-nickname {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    font-size: 42px;
+}
+
+.user-name {
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(222, 205, 180, 0.5);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.user-details {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.user-link {
+    text-decoration: none;
+    color: #DECDB4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.link-icon {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.user-link p {
+    margin-left: 8px;
+}

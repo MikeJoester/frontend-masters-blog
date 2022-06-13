@@ -7,6 +7,9 @@ import angularlogo from '../assets/Angular.png';
 import article1 from '../assets/article1.png';
 import avatar1 from '../assets/avatar1.png';
 import mailbox from '../assets/MailBox.png';
+import user_avt from '../assets/profile_pic.png';
+import LinkIcon from '../assets/LinkIcon.png';
+import editbg from '../assets/editbg.png';
 
 export default {
     csslogo,
@@ -18,4 +21,7 @@ export default {
     article1,
     avatar1,
     mailbox,
+    user_avt,
+    LinkIcon,
+    editbg,
 };

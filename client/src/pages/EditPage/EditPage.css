@@ -1,0 +1,15 @@
+.edit-page-main {
+    background-color: #08080D;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1435px;
+    color: #DECDB4;
+}
+
+.edit-main-text {
+    width: 1350px;
+    text-align: justify;
+}
