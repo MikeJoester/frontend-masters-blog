@@ -42,13 +42,17 @@
     height: 100%;
 }
 
+.view-button-container {
+    position: absolute;
+    bottom: 0;
+    text-align:center;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
 .view-more-btn {
-    position: relative;
-    margin-left: 95%;
     border: none;
-    margin-top: 8%;
     color: #fff;
     background-color: transparent;
-    font-size: 24px;
     cursor: pointer;
 }

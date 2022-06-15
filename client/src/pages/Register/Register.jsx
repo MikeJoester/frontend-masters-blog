@@ -1,12 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import {Box, TextField, Button, IconButton, InputAdornment} from '@mui/material';
+import {Visibility, VisibilityOff} from '@mui/icons-material';
 
 import './Register.css';
 const RegFormTheme = createTheme({
@@ -63,13 +59,14 @@ const RegisterButton = styled(Button)(({ theme }) => ({
   }));
 
 const Register = () => {
-    const [values, setValues] = React.useState({
+    const [values, setValues] = useState({
         password: '',
         showPassword: false,
     });
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
+        setPassword(event.target.value);
     };
 
     const handleClickShowPassword = () => {
@@ -82,8 +79,28 @@ const Register = () => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+    
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
 
-  return (
+    const handleClick = async() => {
+        try {    
+            const res = await axios.post("/auth/register", {
+                username,
+                email,
+                password,
+            });
+            res.data && window.location.replace("/Login");
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    return (
     <div className="app-register-main">
         <div className="app-register-container">
             <h1 className="reg-title">Create new account</h1>
@@ -98,10 +115,16 @@ const Register = () => {
                 }}>
                     <div className="reg-form-group">
                         <div className="reg-name-field">
-                            <RegisterTextField label="First Name" style={{width: '286px'}}/>
-                            <RegisterTextField label="Last Name" style={{width: '286px'}}/>
+                            <RegisterTextField label="First Name" style={{width: '286px'}}
+                                onChange={e=>setFirstname(e.target.value)}/>
+                            <RegisterTextField label="Last Name" style={{width: '286px'}}
+                                onChange={e=>setLastname(e.target.value)}/>
                         </div>
-                        <RegisterTextField fullWidth label="Email" id="custom-css-outlined-input"/>
+                        <RegisterTextField fullWidth label="Email" id="custom-css-outlined-input" 
+                            sx={{mb:'25px'}}
+                            onChange={e=>setEmail(e.target.value)}/>
+                        <RegisterTextField fullWidth label="Username"
+                            onChange={e=>setUsername(e.target.value)}/>
                         <RegisterTextField 
                             fullWidth label="Password"  
                             type={values.showPassword ? 'text' : 'password'}
@@ -125,10 +148,12 @@ const Register = () => {
                             }}
                         />
                         <label className="cb-container">I agree with <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                            <input type="checkbox"/>
+                            <input type="checkbox" required="required"/>
                             <span className="checkmark"></span>
                         </label>
-                        <RegisterButton variant="contained" style={{width: '100%', marginTop: 25}} color="secondary">Sign In</RegisterButton>
+                        <RegisterButton variant="contained" style={{width: '100%', marginTop: 25}} 
+                            color="secondary"
+                            onClick={handleClick}>Register</RegisterButton>
                         <p className="register-text">Already a member? <a href="#"> Log in</a></p>
                     </div>
                 </Box>

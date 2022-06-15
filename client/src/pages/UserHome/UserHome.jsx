@@ -55,7 +55,7 @@ const UserHome = () => {
 
   useEffect(() => {
     const fetchPosts = async() => {
-      const res = await axios.get("http://localhost:8888/api/posts");
+      const res = await axios.get("/posts");
       setPosts(res.data);
       console.log("Successfully get posts!");
     }
@@ -80,12 +80,16 @@ const UserHome = () => {
                     <SubscribeButton variant="contained" color="secondary">Subscribe</SubscribeButton>
                   </Stack>
               </div>
-              <button className="view-more-btn" onClick={handleClick}>
-                {showContent ? <img src={images.hidebutton}/> : <img src={images.viewbutton}/>}
-              </button>
+          </div>
+          <div className="view-button-container">
+            <button className="view-more-btn" onClick={handleClick}>
+              {showContent ? <img src={images.hidebutton}/> : <img src={images.viewbutton}/>}
+            </button>
           </div>
         </div>
+        
       </div>
+      
       {showContent && 
         <div className="category-bg">
           <Category/>

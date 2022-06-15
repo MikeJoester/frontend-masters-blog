@@ -13,11 +13,12 @@ const Post = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get(`/posts/${path}`)
-      .then((result) => {
-        setPost(result.data);
-        console.log(post)
-      });
+      try {
+        const res = await axios.get(`/posts/${path}`);
+        setPost(res.data);
+      } catch (error) {
+        console.log(error);
+      }
     };
     getPost();
   },[path]);
@@ -25,13 +26,13 @@ const Post = () => {
     <div className="post-main-container">
       <Stack direction="column" spacing={2} sx={{justifyContent: 'space-between', alignItems: 'center'}}>
         <img src={images.postimage}/>
-        <div className="post-header"><h1>asdssf</h1></div>
+        <div className="post-header"><h1>{post.title}</h1></div>
         <Stack direction="row" spacing={2} sx={{width:'90%', justifyContent:'flex-start'}}>
-          <p>Jan 5, 2022 . 212 Views</p>
+          <p>{new Date(post.createdAt).toDateString()}  &nbsp; • &nbsp; 212 Views</p>
           <p>heart icon</p>
           <p>download icon</p>
         </Stack>
-        <p className="post-text-body">asdf</p>
+        <p className="post-text-body">{post.desc}</p>
       </Stack>
       <Footer/>
     </div>
