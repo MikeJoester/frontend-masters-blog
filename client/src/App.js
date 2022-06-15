@@ -14,24 +14,24 @@ import {
   WritingPage,
   UserProfile,
   EditPage,
+  Post,
 } from './pages';
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation,
-  Link
 } from 'react-router-dom';
 
 function App() {
+  const user = false;
   return (
     <div className="App">
     <Router>
       <Navbar/>
 
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route exact path="/" element={<Home/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/Register" element={<Register/>}/>
         <Route path="/UserHome" element={<UserHome/>}/>
@@ -43,6 +43,7 @@ function App() {
         <Route path="/WritingPage" element={<WritingPage/>}/>
         <Route path="/UserProfile" element={<UserProfile/>}/>
         <Route path="/EditPage" element={<EditPage/>}/>
+        <Route path="/post/:postId" element={<Post/>}/>
       </Routes>
     </Router>
     </div>

@@ -10,6 +10,9 @@ import mailbox from '../assets/MailBox.png';
 import user_avt from '../assets/profile_pic.png';
 import LinkIcon from '../assets/LinkIcon.png';
 import editbg from '../assets/editbg.png';
+import postimage from '../assets/postimage.png';
+import viewbutton from '../assets/viewButton.png';
+import hidebutton from '../assets/hideButton.png';
 
 export default {
     csslogo,
@@ -24,4 +27,7 @@ export default {
     user_avt,
     LinkIcon,
     editbg,
+    postimage,
+    viewbutton,
+    hidebutton,
 };

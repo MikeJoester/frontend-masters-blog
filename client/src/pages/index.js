@@ -10,6 +10,7 @@ import ReactPage from './UserHome/ReactPage/ReactPage';
 import WritingPage from './WritingPage/WritingPage';
 import UserProfile from './UserProfile/UserProfile';
 import EditPage from './EditPage/EditPage';
+import Post from './Post/Post';
 
 export {
     Home,
@@ -24,4 +25,5 @@ export {
     WritingPage,
     UserProfile,
     EditPage,
+    Post,
 };

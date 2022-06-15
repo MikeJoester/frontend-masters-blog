@@ -2,11 +2,13 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
+import images from '../../constants/images';
 import Stack from '@mui/material/Stack';
 import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import './Navbar.css';
+const user = false;
 const theme = createTheme({
   palette: {
     primary: {
@@ -30,6 +32,28 @@ const NavbarButton = styled(Button)(({ theme }) => ({
   fontSize: '20px',
   textTransform: 'Capitalize',
 }));
+
+export function RightMost() {
+  if (!user)
+    return(
+    <div className="most-left-container">
+      <NavbarButton variant='text'>
+        <Link to="/Login">
+          Sign In
+        </Link>
+      </NavbarButton>
+      <NavbarButton variant='outlined' sx={{ml:'56px'}}>
+        <Link to="/Register">
+          Sign Up 
+        </Link>
+      </NavbarButton>
+    </div>);
+  else return (
+   <IconButton sx={{ width: '57px', height: '57px'}}>
+    <img src={images.user_avt} className="profile-image-small"/>
+   </IconButton> 
+  );
+};
 
 const Navbar = () => {
   return (
@@ -64,21 +88,12 @@ const Navbar = () => {
                   </Link>
                 </NavbarButton>
               </div>
-              <NavbarButton variant='text'>
-                <Link to="/Login">
-                  Sign In 
-                </Link>
-              </NavbarButton>
-              <NavbarButton variant='outlined'>
-                <Link to="/Register">
-                  Sign Up 
-                </Link>
-              </NavbarButton>
+              <RightMost/>
             </ThemeProvider>
           </Stack>
         </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar

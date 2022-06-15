@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {Category, ArticleList, Footer} from '../../components';
-import {Stack, Box, TextField, Button} from '@mui/material/';
+import {Stack, TextField, Button} from '@mui/material/';
 import { styled } from '@mui/material/styles';
+import images from '../../constants/images';
+import axios from 'axios';
 
 import './UserHome.css';
+
 const SubscribeButton = styled(Button)({
   boxShadow: 'none',
   width: 145,
@@ -46,6 +49,18 @@ const MailTextField = styled(TextField)({
 });
 
 const UserHome = () => {
+  const [posts, setPosts] = useState([]);
+  const [showContent, setContent] = useState(false);
+  function handleClick() {setContent(!showContent)}
+
+  useEffect(() => {
+    const fetchPosts = async() => {
+      const res = await axios.get("http://localhost:8888/api/posts");
+      setPosts(res.data);
+      console.log("Successfully get posts!");
+    }
+    fetchPosts();
+  }, []);
   return (
     <div>
       <div className="user-home-main">
@@ -65,14 +80,20 @@ const UserHome = () => {
                     <SubscribeButton variant="contained" color="secondary">Subscribe</SubscribeButton>
                   </Stack>
               </div>
+              <button className="view-more-btn" onClick={handleClick}>
+                {showContent ? <img src={images.hidebutton}/> : <img src={images.viewbutton}/>}
+              </button>
           </div>
         </div>
       </div>
-      <div className="category-bg">
-        <Category/>
-        <ArticleList/>
-      </div>
-      <Footer/>
+      {showContent && 
+        <div className="category-bg">
+          <Category/>
+          <ArticleList posts={posts}/>
+          <Footer/>
+        </div>
+      }
+      
     </div>
     
   )
