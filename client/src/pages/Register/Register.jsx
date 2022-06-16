@@ -106,7 +106,6 @@ const Register = () => {
             <h1 className="reg-title">Create new account</h1>
             <ThemeProvider theme={RegFormTheme}>
                 <Box component='form' noValidate autoComplete="off" sx={{
-                    ml: 12,
                     width: 604,
                     maxWidth: '100%',
                     input: {

@@ -43,9 +43,9 @@ const Footer = () => {
                 </Stack>
             </Box>
             
-            <div className="footer-link">
+            <Stack direction="row" spacing={8} sx={{width:'80%', color:'#DECDB4'}}>
 
-                <Box sx={{ width: '100%', mr:'112px'}}>
+                <Box sx={{ width: '100%'}}>
                     <Stack spacing={2}>
                         <h3>CATEGORY</h3>
                         <p>CSS</p>
@@ -56,7 +56,7 @@ const Footer = () => {
                     </Stack>
                 </Box>
 
-                <Box sx={{ width: '100%', mr:'112px'}}>
+                <Box sx={{ width: '100%'}}>
                     <Stack spacing={2}>
                         <h3>ABOUT ME</h3>
                         <p>About me</p>
@@ -65,7 +65,7 @@ const Footer = () => {
                     </Stack>
                 </Box>
 
-                <Box sx={{ width: '100%', mr:'112px'}}>
+                <Box sx={{ width: '100%'}}>
                     <Stack spacing={2}>
                         <h3>GET IN TOUCH</h3>
                         <p>+84 905 234 jqk</p>
@@ -73,8 +73,8 @@ const Footer = () => {
                     </Stack>
                 </Box>
 
-                <Box sx={{ width: '100%', mr:'50px'}}>
-                    <Stack spacing={2}>
+                <Box sx={{ width: '100%'}}>
+                    <Stack spacing={2} sx={{mr:'50px'}}>
                         <h3>FOLLOW US</h3>
                         <p>Medium</p>
                         <p>Instagram</p>
@@ -82,7 +82,7 @@ const Footer = () => {
                         <p>Facebook</p>
                     </Stack>
                 </Box>
-            </div>
+            </Stack>
         </div>
         <div className="white-horizontal-line"></div>
         <p className="footer-copyright">© 2022 MikeJ</p>

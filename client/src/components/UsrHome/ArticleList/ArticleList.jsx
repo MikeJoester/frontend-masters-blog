@@ -27,7 +27,7 @@ const ArticleList = ({posts}) => {
   return (
     <ThemeProvider theme={AlistTheme}>
         <Stack direction="column" spacing={10} id="article-list" 
-              sx={{mx:'94px', justifyContent: 'space-between'}}
+              sx={{mx:'95px', justifyContent: 'space-between'}}
         >
             <Stack direction="column" spacing={4}>
               <ArticleTitle title="CSS" linkTo="/CSSPage"/>

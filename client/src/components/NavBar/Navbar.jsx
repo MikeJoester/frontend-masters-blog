@@ -1,14 +1,14 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-import images from '../../constants/images';
-import Stack from '@mui/material/Stack';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {Button, IconButton, Stack} from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import SearchIcon from '@mui/icons-material/Search';
+
+import images from '../../constants/images';
 
 import './Navbar.css';
-const user = false;
+const user = true;
 const theme = createTheme({
   palette: {
     primary: {
@@ -32,28 +32,6 @@ const NavbarButton = styled(Button)(({ theme }) => ({
   fontSize: '20px',
   textTransform: 'Capitalize',
 }));
-
-export function RightMost() {
-  if (!user)
-    return(
-    <div className="most-left-container">
-      <NavbarButton variant='text'>
-        <Link to="/Login">
-          Sign In
-        </Link>
-      </NavbarButton>
-      <NavbarButton variant='outlined' sx={{ml:'56px'}}>
-        <Link to="/Register">
-          Sign Up 
-        </Link>
-      </NavbarButton>
-    </div>);
-  else return (
-   <IconButton sx={{ width: '57px', height: '57px'}}>
-    <img src={images.user_avt} className="profile-image-small"/>
-   </IconButton> 
-  );
-};
 
 const Navbar = () => {
   return (
@@ -80,15 +58,50 @@ const Navbar = () => {
                   Category 
                 </Link>
               </NavbarButton>
-              <div className="search-container">
-                <NavbarButton variant='text'>
-                  <SearchIcon/>
-                  <Link to="/SearchPage">
-                    Search
-                  </Link>
-                </NavbarButton>
+              
+              <div className="most-left-container">
+                {user ? 
+                 <div className="most-left-container">
+                  <NavbarButton variant='text' sx={{mr:'56px'}}>
+                    <Link to="/WritingPage">
+                      Write
+                    </Link>
+                  </NavbarButton>
+                  <div className="search-container">
+                    <NavbarButton variant='text'>
+                      <SearchIcon/>
+                      <Link to="/SearchPage">
+                        Search
+                      </Link>
+                    </NavbarButton>
+                  </div>
+                  <IconButton sx={{ width: '57px', height: '57px'}}>
+                    <Link to="/UserProfile">
+                      <img src={images.user_avt} className="profile-image-small"/>
+                    </Link>
+                  </IconButton> 
+                 </div>
+                : <div className="most-left-container">
+                    <div className="search-container">
+                      <NavbarButton variant='text'>
+                        <SearchIcon/>
+                        <Link to="/SearchPage">
+                          Search
+                        </Link>
+                      </NavbarButton>
+                    </div>
+                    <NavbarButton variant='text'>
+                      <Link to="/Login">
+                        Sign In
+                      </Link>
+                    </NavbarButton>
+                    <NavbarButton variant='outlined' sx={{ml:'56px'}}>
+                      <Link to="/Register">
+                        Sign Up 
+                      </Link>
+                    </NavbarButton>
+                  </div>}
               </div>
-              <RightMost/>
             </ThemeProvider>
           </Stack>
         </div>

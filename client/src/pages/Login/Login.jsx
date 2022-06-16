@@ -1,12 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
+import axios from 'axios';
+import {Context} from '../../context/Context';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import {Box, TextField, Button, IconButton, InputAdornment} from '@mui/material';
+import {Visibility, VisibilityOff} from '@mui/icons-material';
 
 import './Login.css';
 const FormTheme = createTheme({
@@ -82,7 +79,31 @@ const Login = () => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    
+
+    const userRef = useRef();
+    const passwordRef = useRef();
+    const {user, dispatch, isFetching} = useContext(Context);
+
+    const handleClick = async(e) => {
+        e.preventDefault();
+        dispatch({type : "LOGIN_START"});
+        try {
+            const res = await axios.post("/auth/login", {
+                username: userRef.current.value,
+                password: passwordRef.current.value,
+            })
+            dispatch({
+                type : "LOGIN_SUCCESS",
+                payload: res.data,
+            });
+        } catch (error) {
+            dispatch({
+                type : "LOGIN_FAILURE",
+            });
+            alert("Cannot Log In, password or username does not match!");
+        }
+    };
+    console.log(isFetching);
   return (
     <div className="app-login-main">
         <div className="app-login-container">
@@ -98,7 +119,8 @@ const Login = () => {
                     }
                 }}>
                     <div className="login-form-group">
-                        <LoginTextField fullWidth label="Username" id="custom-css-outlined-input"/>
+                        <LoginTextField fullWidth label="Username" id="custom-css-outlined-input"
+                        inputRef={userRef}/>
                         <LoginTextField
                             fullWidth label="Password"  
                             type={values.showPassword ? 'text' : 'password'}
@@ -106,6 +128,7 @@ const Login = () => {
                             onChange={handleChange('password')}
                             id="outlined-adornment-password" 
                             style={{ marginTop: 25, marginBottom: 25 }}
+                            inputRef={passwordRef}
                             InputProps= {
                             {endAdornment:
                                 <InputAdornment position="end">
@@ -121,7 +144,8 @@ const Login = () => {
                                 </InputAdornment>
                             }}
                         />
-                        <LoginButton variant="contained" style={{width: '100%'}} color="secondary">Sign In</LoginButton>
+                        <LoginButton variant="contained" style={{width: '100%'}} color="secondary"
+                        onClick={handleClick}>Sign In</LoginButton>
                         <p className="register-text">New to FrontEndMaster? <a href="#"> Register</a></p>
                     </div>
                 </Box>

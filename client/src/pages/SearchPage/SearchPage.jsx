@@ -96,7 +96,7 @@ const SearchPage = () => {
                         </Stack>
                     </Box>
                     
-                    <div className="footer-link">
+                    <Stack direction="row" sx={{width:'80%', color:'#DECDB4'}}>
 
                         <Box sx={{ width: '100%', mr:'112px'}}>
                             <Stack spacing={2}>
@@ -135,7 +135,7 @@ const SearchPage = () => {
                                 <p>Facebook</p>
                             </Stack>
                         </Box>
-                    </div>
+                    </Stack>
                 </div>
                 <div className="white-horizontal-line"></div>
                 <p className="footer-copyright">© 2022 MikeJ</p>

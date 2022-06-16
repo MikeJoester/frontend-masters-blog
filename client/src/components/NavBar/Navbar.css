@@ -46,6 +46,7 @@
     flex-direction: row;
     height: 100%;
     align-items: center;
+    margin-right: 56px;
 }
 
 .most-left-container {
@@ -59,5 +60,5 @@
 .profile-image-small {
     width: 57px;
     height: 57px;
-    margin-right: -100px;
+    margin-top: 5px;
 }

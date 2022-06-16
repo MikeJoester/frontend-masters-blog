@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+
 .post-main-container {
     background-color: #08080D;
     color: #DECDB4;
-    height: 1900px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -16,11 +18,33 @@
     width: 90%;
 }
 
-.post-main-container p {
+.post-date {
+    margin: 0;
+}
+.post-header-info {
     margin: 0;
 }
 
 .post-text-body {
     width: 90%;
     text-align: justify;
+    margin: 0;
+}
+
+.comment-title {
+    font-family: 'Varela', sans-serif;
+    font-size: 35px;
+    margin: 0;
+}
+
+.big-ass-white-line {
+    width: 100%;
+    height: 1px;
+    background-color: #D6D6D6;
+}
+
+.fb-comments {
+    display: flex;
+    padding-left: 90px;
+    background-color: #f2f2f2;
 }
