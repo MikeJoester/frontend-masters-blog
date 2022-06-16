@@ -96,7 +96,7 @@ const Register = () => {
             });
             res.data && window.location.replace("/Login");
         } catch (error) {
-            console.log(error);
+            alert("Username or Email already exists!");
         }
     };
 
@@ -153,7 +153,7 @@ const Register = () => {
                         <RegisterButton variant="contained" style={{width: '100%', marginTop: 25}} 
                             color="secondary"
                             onClick={handleClick}>Register</RegisterButton>
-                        <p className="register-text">Already a member? <a href="#"> Log in</a></p>
+                        <p className="register-text">Already a member? <a href="/Login"> Log in</a></p>
                     </div>
                 </Box>
             </ThemeProvider>

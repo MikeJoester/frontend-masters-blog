@@ -12,6 +12,12 @@ const Post = () => {
   const [post, setPost] = useState({});
 
   useEffect(() => {
+    if (window.FB) {
+      window.FB.XFBML.parse();
+    }
+  },[])
+
+  useEffect(() => {
     const getPost = async () => {
       try {
         const res = await axios.get(`/posts/${path}`);
@@ -38,7 +44,7 @@ const Post = () => {
       <Stack sx={{mx:'70px'}} direction="column" spacing={2}>
         <h2 className="comment-title">C O M M E N T</h2>
         <div className="big-ass-white-line"></div>
-        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="1080" data-numposts="3"></div>
+        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
       </Stack>
       <Footer/>
     </div>

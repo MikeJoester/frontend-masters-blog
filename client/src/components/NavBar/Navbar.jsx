@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import axios from 'axios';
+import {Context} from '../../context/Context';
 import { Link } from 'react-router-dom';
 import {Button, IconButton, Stack} from '@mui/material';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
@@ -8,7 +9,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import images from '../../constants/images';
 
 import './Navbar.css';
-const user = true;
 const theme = createTheme({
   palette: {
     primary: {
@@ -34,6 +34,7 @@ const NavbarButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const user = useContext(Context);
   return (
     <nav className="navbar-main">
         <div className="navbar-container">

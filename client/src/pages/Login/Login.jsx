@@ -146,7 +146,7 @@ const Login = () => {
                         />
                         <LoginButton variant="contained" style={{width: '100%'}} color="secondary"
                         onClick={handleClick}>Sign In</LoginButton>
-                        <p className="register-text">New to FrontEndMaster? <a href="#"> Register</a></p>
+                        <p className="register-text">New to FrontEndMaster? <a href="/Register"> Register</a></p>
                     </div>
                 </Box>
             </ThemeProvider>

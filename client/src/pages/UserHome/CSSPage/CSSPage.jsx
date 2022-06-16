@@ -19,85 +19,18 @@ const CSSPage = () => {
 
           <Stack direction="column" spacing={4}>
             <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
-              <ArticleItem
+              {/* <ArticleItem
                 imagename={images.article1}
                 title="Fundamental Of Javascript"
                 avatar={images.avatar1}
                 userName="Dasteen"
                 postDate="Jan 10, 2022"
                 readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
+              /> */}
               
             </Stack>
           </Stack>
-          
-          <Stack direction="column" spacing={4}>
-            <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-
-              <ArticleItem
-                imagename={images.article1}
-                title="Fundamental Of Javascript"
-                avatar={images.avatar1}
-                userName="Dasteen"
-                postDate="Jan 10, 2022"
-                readTime="3 Min"
-              />
-              
-            </Stack>
-          </Stack>             
+                   
         </Stack>
         </div>
         <Footer/>

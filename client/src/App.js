@@ -1,5 +1,7 @@
 import './App.css';
+import {useContext} from 'react';
 import {Navbar} from './components';
+import {Context} from './context/Context';
 
 import {
   Home,
@@ -24,7 +26,7 @@ import {
 } from 'react-router-dom';
 
 function App() {
-  const user = false;
+  const user = useContext(Context);
   return (
     <div className="App">
     <Router>
