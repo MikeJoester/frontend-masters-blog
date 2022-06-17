@@ -89,7 +89,7 @@ const Register = () => {
 
     const handleClick = async() => {
         try {    
-            const res = await axios.post("/auth/register", {
+            const res = await axios.post("https://fendmaster-app.herokuapp.com/api/auth/register", {
                 username,
                 email,
                 password,

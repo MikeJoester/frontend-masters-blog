@@ -20,7 +20,6 @@ import {
 } from './pages';
 
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
@@ -29,9 +28,7 @@ function App() {
   const user = useContext(Context);
   return (
     <div className="App">
-    <Router>
       <Navbar/>
-
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/Login" element={<Login/>}/>
@@ -47,7 +44,6 @@ function App() {
         <Route path="/EditPage" element={<EditPage/>}/>
         <Route path="/post/:postId" element={<Post/>}/>
       </Routes>
-    </Router>
     </div>
   );
 }

@@ -73,7 +73,7 @@ const SearchPage = () => {
     const [posts, setPosts] = useState([]);
     const [searchVal, setSearchVal] = useState("");
     const handleSearch = async() => {
-        const res = await axios.get(`/posts?user=${searchVal.toString()}`);
+        const res = await axios.get(`https://fendmaster-app.herokuapp.com/api/posts?user=${searchVal.toString()}`);
         setPosts(res.data);
         console.log("Successfully searched posts!");
     };

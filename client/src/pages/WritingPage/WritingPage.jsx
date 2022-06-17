@@ -57,7 +57,7 @@ const WritingPage = () => {
       desc
     };
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post("https://fendmaster-app.herokuapp.com/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {
       alert("Cannot publish post, there has been an error!");

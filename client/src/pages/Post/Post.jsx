@@ -37,7 +37,7 @@ const Post = () => {
 
   const handleDelete = async() => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`https://fendmaster-app.herokuapp.com/api/posts/${post._id}`, {
         data: {username : user.username},
       });
       alert("Post deleted!");

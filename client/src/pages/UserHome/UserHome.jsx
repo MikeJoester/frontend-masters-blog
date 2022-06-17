@@ -56,7 +56,7 @@ const UserHome = () => {
   
   useEffect(() => {
     const fetchPosts = async() => {
-      const res = await axios.get("/posts");
+      const res = await axios.get("https://fendmaster-app.herokuapp.com/api/posts");
       setPosts(res.data);
       console.log("Successfully get posts!");
     }
