@@ -49,7 +49,7 @@ const Post = () => {
 
   const handleUpdate  = async() => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axios.put(`https://fendmaster-app.herokuapp.com/api/posts/${post._id}`, {
           username : user.username,
           title, 
           desc 
@@ -70,7 +70,7 @@ const Post = () => {
   useEffect(() => {
     const getPost = async () => {
       try {
-        const res = await axios.get(`/posts/${path}`);
+        const res = await axios.get(`https://fendmaster-app.herokuapp.com/api/posts/${path}`);
         setPost(res.data);
         setTitle(res.data.title);
         setDesc(res.data.desc);
