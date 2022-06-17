@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import ArticleItem from '../../components/UsrHome/ArticleList/ArticleItems/ArticleItem';
 import './SearchPage.css';
 import {
     Box, 
@@ -6,7 +7,9 @@ import {
     IconButton, 
     Button,
     TextField,
+    Grid,
 } from '@mui/material/';
+import axios from 'axios';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -67,14 +70,31 @@ const SearchTextField = styled(TextField)({
 });
 
 const SearchPage = () => {
+    const [posts, setPosts] = useState([]);
+    const [searchVal, setSearchVal] = useState("");
+    const handleSearch = async() => {
+        const res = await axios.get(`/posts?user=${searchVal.toString()}`);
+        setPosts(res.data);
+        console.log("Successfully searched posts!");
+    };
+
   return (
     <div className="search-container-main">
         <div className='gradient-container'>
             <div className="big-ass-line"></div>
             <Stack direction="row" spacing={3} sx={{pt:'479px', pl:'334px'}}>
-                <SearchTextField label="Search information  about artical,  author,.........." sx={{width:'60%', height:'67px'}}/>
-                <SearchButton variant="contained" color="secondary">Search</SearchButton>
+                <SearchTextField value={searchVal} onChange={(e) => setSearchVal(e.target.value)} label="Search information  about artical,  author,.........." sx={{width:'60%', height:'67px'}}></SearchTextField>
+                <SearchButton variant="contained" color="secondary" onClick={handleSearch}>Search</SearchButton>
             </Stack>
+            <br/><br/><br/>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
+                    justifyContent="center">
+                    {posts.map(p=>(
+                    <ArticleItem
+                    post={p}/>
+                    ))}
+                </Grid>
+            
             <footer className="custom-footer">
                 <div className="footer-container">
                     <Box sx={{ width: '100%', ml:'95px'}}>

@@ -10,7 +10,7 @@ const ArticleItem = ({post}) => {
         <Stack direction="column" 
             sx={{
                 justifyContent: 'space-between',
-                width: '450px',
+                width: '425px',
                 height: '425px',
                 alignItems:'center',
         }}>
@@ -30,7 +30,7 @@ const ArticleItem = ({post}) => {
                 <div className="article-item-info-container">
                     <img src={images.avatar1} className="avatar-image"/>
                     <Stack direction="column" sx={{ml:'15px', width: '100%', height:'57px', justifyContent:'space-between'}}>
-                        <p className="usr-name">ASDF</p>
+                        <p className="usr-name">{post.username}</p>
                         <p className="time-text">{ new Date(post.createdAt).toDateString()}</p>
                         {/* &nbsp; • &nbsp; 3 min Read</p> */}
                     </Stack>

@@ -94,6 +94,7 @@ const Register = () => {
                 email,
                 password,
             });
+            alert("Register Success!");
             res.data && window.location.replace("/Login");
         } catch (error) {
             alert("Username or Email already exists!");

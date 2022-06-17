@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {Stack, Box, IconButton, Button} from '@mui/material/';
 import images from '../../constants/images';
+import {Context} from '../../context/Context';
 import {Footer} from '../../components/';
 import { styled, createTheme, ThemeProvider} from '@mui/material/styles';
 import './UserProfile.css';
@@ -32,6 +33,11 @@ const EditButton = styled(Button)({
 });
 
 const UserProfile = () => {
+  const {user} = useContext(Context);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [updateMode, setUpdateMode] = useState(false);
+
   return (
     <div className="user-profile-main">
       <Stack direction="row" sx={{ ml:'100px'}} spacing={12}>
@@ -60,8 +66,8 @@ const UserProfile = () => {
               borderBottom:'1px solid #DECDB4', 
             }}> ABOUT ME </Box>
 
-            <h1 className="user-nickname">Naughty Rabbit</h1>
-            <p className="user-name">@rabbit_Inas</p>
+            <h1 className="user-nickname">{user.username}</h1>
+            <p className="user-name">@{user.username}</p>
             <p className="user-details">Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.</p>
 
             <Stack direction="row" sx={{justifyContent:'space-between'}}>

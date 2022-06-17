@@ -34,7 +34,13 @@ const NavbarButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const user = useContext(Context);
+  const {user, dispatch} = useContext(Context);
+
+  const handleLogout = () => {
+    alert("Log out success!");
+    dispatch({type : "LOGOUT"});
+  };
+
   return (
     <nav className="navbar-main">
         <div className="navbar-container">
@@ -44,26 +50,27 @@ const Navbar = () => {
               <h2>.Blog</h2>
             </div>
           </a>
-          <Stack spacing={7} direction='row' sx={{
-            mr: 17,
-            p: 2,
+          <Stack spacing={5} direction='row' sx={{
+            mr:'75px'
           }}>
             <ThemeProvider theme={theme}>
-              <NavbarButton variant='text'>
-                <Link to="/">
-                  Home 
-                </Link>
-              </NavbarButton>
-              <NavbarButton variant='text'>
-                <Link to="/UserHome">
-                  Category 
-                </Link>
-              </NavbarButton>
+              <div className="most-right-container">
+                <NavbarButton variant='text' sx={{mr:'40px'}}>
+                  <Link to="/">
+                    Home
+                  </Link>
+                </NavbarButton>
+                <NavbarButton variant='text'>
+                  <Link to="/UserHome">
+                    Category 
+                  </Link>
+                </NavbarButton>
+              </div>
               
-              <div className="most-left-container">
+              <div className="most-rightcontainer">
                 {user ? 
-                 <div className="most-left-container">
-                  <NavbarButton variant='text' sx={{mr:'56px'}}>
+                 <div className="most-right-container">
+                  <NavbarButton variant='text' sx={{mr:'40px'}}>
                     <Link to="/WritingPage">
                       Write
                     </Link>
@@ -80,9 +87,10 @@ const Navbar = () => {
                     <Link to="/UserProfile">
                       <img src={images.user_avt} className="profile-image-small"/>
                     </Link>
-                  </IconButton> 
+                  </IconButton>
+                  <NavbarButton onClick={handleLogout}>{user && "Log Out"}</NavbarButton>
                  </div>
-                : <div className="most-left-container">
+                : <div className="most-right-container">
                     <div className="search-container">
                       <NavbarButton variant='text'>
                         <SearchIcon/>
@@ -96,7 +104,7 @@ const Navbar = () => {
                         Sign In
                       </Link>
                     </NavbarButton>
-                    <NavbarButton variant='outlined' sx={{ml:'56px'}}>
+                    <NavbarButton variant='outlined' sx={{ml:'40px'}}>
                       <Link to="/Register">
                         Sign Up 
                       </Link>

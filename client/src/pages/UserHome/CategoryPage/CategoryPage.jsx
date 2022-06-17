@@ -17,7 +17,7 @@ const CategoryPage = () => {
           </div>
 
           <Stack direction="row" sx={{mt:'53px', justifyContent: 'space-between'}}>
-          <a href="#"><Stack direction="column" 
+          <a href="/CSSPage"><Stack direction="column" 
             sx={{
               width: '220px', 
               height: '220px', 
@@ -28,7 +28,7 @@ const CategoryPage = () => {
               <p className="category-header">CSS</p>
             </Stack></a>
 
-            <a href="#"><Stack direction="column" 
+            <a href="/JSPage"><Stack direction="column" 
             sx={{
               width: '220px', 
               height: '220px', 
@@ -61,7 +61,7 @@ const CategoryPage = () => {
               <p className="category-header">Vue JS</p>
             </Stack></a>
 
-            <a href="#"><Stack direction="column" 
+            <a href="/ReactPage"><Stack direction="column" 
             sx={{
               width: '220px', 
               height: '220px', 

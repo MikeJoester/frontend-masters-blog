@@ -58,6 +58,7 @@ const MailTextField = styled(TextField)({
 });
 
 const Newsletter = () => {
+    function alertFunc() {alert("Thank you for your subscribtion!")}
   return (
     <div className="newsletter-main">
         <BootstrapButton variant="contained" color="secondary"> More Article</BootstrapButton>
@@ -71,7 +72,7 @@ const Newsletter = () => {
             
             <Stack direction="row" spacing={2} sx={{mt:'30px'}}>
                 <MailTextField label="Enter your email here..." sx={{width:'444px', height:'67px'}}/>
-                <SubscribeButton variant="contained" color="secondary">Subscribe</SubscribeButton>
+                <SubscribeButton variant="contained" color="secondary" onClick={alertFunc}>Subscribe</SubscribeButton>
             </Stack>
         </Stack>
     </div>

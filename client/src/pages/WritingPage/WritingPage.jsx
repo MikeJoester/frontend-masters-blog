@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
+import axios from 'axios';
 import {Stack, TextField, Button, IconButton} from '@mui/material/';
 import {styled, createTheme, ThemeProvider} from '@mui/material/styles';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import {Context} from '../../context/Context';
+
 import './WritingPage.css';
 
 const WritingTheme = createTheme({
@@ -42,6 +45,25 @@ const PublishButton = styled(Button)(({ theme }) => ({
 }));
 
 const WritingPage = () => {
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
+  const {user} = useContext(Context);
+
+  const handleClick = async(e) => {
+    e.preventDefault();
+    const newPost = {
+      username: user.username,
+      title,
+      desc
+    };
+    try {
+      const res = await axios.post("/posts", newPost);
+      window.location.replace("/post/" + res.data._id);
+    } catch (err) {
+      alert("Cannot publish post, there has been an error!");
+    }
+  };
+
   return (
     <div className="writing-page-main">
         <ThemeProvider theme={WritingTheme}>
@@ -52,13 +74,15 @@ const WritingPage = () => {
                     </IconButton>
                     
                     <TitleTextField
-                        defaultValue="Title"
                         variant="filled"
+                        placeholder="Title"
+                        onChange={e => setTitle(e.target.value)}
                         sx={{input: {color: '#DECDB4', fontWeight:'600px', fontSize:'58px'}}}/>
                 </Stack>
-                <PublishButton sx={{mt:'20px'}}>Publish</PublishButton>
+                <PublishButton sx={{mt:'20px'}} onClick={handleClick}>Publish</PublishButton>
             </Stack>
-            <textarea name="ass" cols="40" className="main-input" >Tell Your Story...</textarea>
+            <textarea name="ass" cols="40" className="main-input" placeholder="Tell Your Story..." 
+            onChange={e => setDesc(e.target.value)}></textarea>
         </ThemeProvider>
     </div>
   )

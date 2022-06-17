@@ -52,7 +52,8 @@ const UserHome = () => {
   const [posts, setPosts] = useState([]);
   const [showContent, setContent] = useState(false);
   function handleClick() {setContent(!showContent)}
-
+  function alertFunc() {alert("Thank you for your subscribtion!")}
+  
   useEffect(() => {
     const fetchPosts = async() => {
       const res = await axios.get("/posts");
@@ -77,7 +78,7 @@ const UserHome = () => {
 
                   <Stack direction="row" spacing={2} sx={{ml:'95px'}}>
                     <MailTextField label="Enter your email here..." sx={{width:'444px', height:'67px'}}/>
-                    <SubscribeButton variant="contained" color="secondary">Subscribe</SubscribeButton>
+                    <SubscribeButton variant="contained" color="secondary" onClick={alertFunc}>Subscribe</SubscribeButton>
                   </Stack>
               </div>
           </div>

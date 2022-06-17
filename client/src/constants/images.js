@@ -13,6 +13,8 @@ import editbg from '../assets/editbg.png';
 import postimage from '../assets/postimage.png';
 import viewbutton from '../assets/viewButton.png';
 import hidebutton from '../assets/hideButton.png';
+import deleteIcon from '../assets/deleteIcon.png';
+import editIcon from '../assets/editIcon.png';
 
 export default {
     csslogo,
@@ -30,4 +32,6 @@ export default {
     postimage,
     viewbutton,
     hidebutton,
+    deleteIcon,
+    editIcon,
 };

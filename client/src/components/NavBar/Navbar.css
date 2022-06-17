@@ -46,10 +46,10 @@
     flex-direction: row;
     height: 100%;
     align-items: center;
-    margin-right: 56px;
+    margin-right: 40px;
 }
 
-.most-left-container {
+.most-right-container {
     display: flex;
     flex-direction: row;
     height: 100%;

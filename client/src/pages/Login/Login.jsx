@@ -96,6 +96,8 @@ const Login = () => {
                 type : "LOGIN_SUCCESS",
                 payload: res.data,
             });
+            res.data && window.location.replace("/UserHome");
+            alert("Log In success!");
         } catch (error) {
             dispatch({
                 type : "LOGIN_FAILURE",

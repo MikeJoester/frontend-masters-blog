@@ -1,0 +1,6 @@
+.article-item-container {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    overscroll-behavior-inline: contain;
+}

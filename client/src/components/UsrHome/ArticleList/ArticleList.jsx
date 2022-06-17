@@ -4,7 +4,6 @@ import { createTheme, ThemeProvider} from '@mui/material/styles';
 import ArticleItem from './ArticleItems/ArticleItem';
 import ArticleTitle from './ArticleTitle/ArticleTitle';
 import Newsletter from './Newsletter/Newsletter';
-import images from '../../../constants/images';
 
 import './ArticleList.css';
 
@@ -27,18 +26,41 @@ const ArticleList = ({posts}) => {
   return (
     <ThemeProvider theme={AlistTheme}>
         <Stack direction="column" spacing={10} id="article-list" 
-              sx={{mx:'95px', justifyContent: 'space-between'}}
+              sx={{ mx:'95px', justifyContent: 'space-between'}}
         >
-            <Stack direction="column" spacing={4}>
-              <ArticleTitle title="CSS" linkTo="/CSSPage"/>
-              <Stack spacing={2} direction="row" sx={{alignItems:'center'}}>
-                {posts.map(p=>(
-                  <ArticleItem
-                  post={p}/>
-                ))}
-              </Stack>
-            </Stack>
+          <ArticleTitle title="CSS" linkTo="/CSSPage"/> 
+          <div className="article-item-container">
+            {posts.map(p=>(
+              <ArticleItem
+              post={p}/>
+            ))}
+          </div>
         </Stack>
+        <br/><br/><br/>
+        <Stack direction="column" spacing={10} id="article-list" 
+              sx={{ mx:'95px', justifyContent: 'space-between'}}
+        >
+          <ArticleTitle title="JavaScript" linkTo="/JSPage"/> 
+          <div className="article-item-container">
+            {posts.map(p=>(
+              <ArticleItem
+              post={p}/>
+            ))}
+          </div>
+        </Stack>
+        <br/><br/><br/>
+        <Stack direction="column" spacing={10} id="article-list" 
+              sx={{ mx:'95px', justifyContent: 'space-between'}}
+        >
+          <ArticleTitle title="React JS" linkTo="/ReactPage"/> 
+          <div className="article-item-container">
+            {posts.map(p=>(
+              <ArticleItem
+              post={p}/>
+            ))}
+          </div>
+        </Stack>
+
         <Newsletter/>
     </ThemeProvider>
   )
